@@ -10,14 +10,13 @@ class PriorityTaskManager : AbstractTaskManager() {
                 for (p: Process in ordered) {
                     if (process.priority.ordinal > p.priority.ordinal) {
                         tasks.remove(p)
-                        saveProcess(process)
-                        return true
+                        return saveProcess(process)
                     }
                 }
                 return false
             } else {
-                saveProcess(process)
-                return true
+
+                return saveProcess(process)
             }
         }
     }

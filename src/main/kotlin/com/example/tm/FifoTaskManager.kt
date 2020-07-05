@@ -6,8 +6,7 @@ class FifoTaskManager : AbstractTaskManager() {
             while (tasks.size >= PROCESS_LIMIT) {
                 tasks.remove(tasks.first())
             }
-            saveProcess(process)
-            return true
+            return saveProcess(process)
         }
     }
 }

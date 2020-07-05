@@ -60,9 +60,11 @@ abstract class AbstractTaskManager : ProcessListener {
         }
     }
 
-    protected fun saveProcess(process: Process) {
-        tasks.add(process)
-        process.creationDate = Instant.now()
+    protected fun saveProcess(process: Process):Boolean{
+        val res = tasks.add(process)
+        if(res) {
+            process.creationDate = Instant.now()
+        }
+        return res
     }
-    
 }

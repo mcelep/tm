@@ -163,6 +163,17 @@ abstract class BaseTest {
         assert(result[2].ID == 2.toLong())
     }
 
+    @Test
+    fun testWhenAProcessIsAlreadyIncludedAddingShouldReturnFalse(){
+        // Given
+        val p1 = Process(1, Priority.Medium, classUnderTest)
+
+
+        // Expect
+        assert(classUnderTest.add(p1))
+        assert(! classUnderTest.add(p1))
+    }
+
     private fun parseProcessFromString(s: String): Process? {
         val processFormatBits = PROCESS_STRING_FORMAT.split(",")
         val idRegx = Regex(processFormatBits[0].replace("%s", "(\\d*),"))

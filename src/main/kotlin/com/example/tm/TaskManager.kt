@@ -6,8 +6,7 @@ class TaskManager : AbstractTaskManager() {
             if (tasks.size >= PROCESS_LIMIT) {
                 return false
             }
-            saveProcess(process)
-            return true
+            return saveProcess(process)
         }
     }
 }
