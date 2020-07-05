@@ -103,7 +103,6 @@ abstract class BaseTest {
             }
             counter--
         }
-
     }
 
     @Test
@@ -130,7 +129,6 @@ abstract class BaseTest {
             }
             counter++
         }
-
     }
 
 
@@ -164,14 +162,13 @@ abstract class BaseTest {
     }
 
     @Test
-    fun testWhenAProcessIsAlreadyIncludedAddingShouldReturnFalse(){
+    fun testWhenAProcessIsAlreadyIncludedAddingShouldReturnFalse() {
         // Given
         val p1 = Process(1, Priority.Medium, classUnderTest)
 
-
         // Expect
         assert(classUnderTest.add(p1))
-        assert(! classUnderTest.add(p1))
+        assert(!classUnderTest.add(p1))
     }
 
     private fun parseProcessFromString(s: String): Process? {
@@ -185,6 +182,5 @@ abstract class BaseTest {
         val priority = prioMatch?.groupValues?.get(1)?.let { Priority.valueOf(it) }
 
         return Process(id!!, priority!!, classUnderTest)
-
     }
 }
