@@ -9,7 +9,7 @@ import java.util.stream.Collectors
 const val PROCESS_LIMIT = 10
 
 abstract class AbstractTaskManager : ProcessListener {
-    private val log = Logger.getLogger(PriorityTaskManager::class.toString())
+    private val log = Logger.getLogger(AbstractTaskManager::class.toString())
 
     internal val tasks = LinkedHashSet<Process>()
 
